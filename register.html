@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Daftar Anggota — Aksara Library</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body class="auth-page">
+  <header class="navbar navbar-auth" id="navbar">
+    <div class="nav-container">
+      <a href="index.html" class="logo">
+        <img src="assets/logo.svg" alt="" class="logo-img" width="40" height="40" />
+        <span class="logo-wrap">
+          <span class="logo-text">Aksara Library</span>
+          <span class="logo-sub">Ruang Aksara · SMPN 8 Depok</span>
+        </span>
+      </a>
+      <a href="index.html" class="btn btn-outline btn-sm">← Kembali ke Beranda</a>
+    </div>
+  </header>
+
+  <main class="auth-main">
+    <div class="auth-container auth-container-register">
+      <div class="auth-visual clay-card">
+        <div class="auth-visual-inner">
+          <img src="assets/logo.svg" alt="Aksara Library" class="auth-logo-img" width="120" height="120" />
+          <h2>Bergabung dengan Aksara Library</h2>
+          <p>Daftar sebagai siswa atau guru SMPN 8 Depok untuk mengakses koleksi buku sekolah secara digital.</p>
+          <ul class="auth-benefits">
+            <li>📚 Akses ribuan buku sekolah</li>
+            <li>📝 Peminjaman online mudah</li>
+            <li>⏰ Pengingat jatuh tempo otomatis</li>
+            <li>📋 Riwayat baca personal</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="auth-form-card clay-card">
+        <div class="auth-form-header">
+          <h1>Daftar Anggota</h1>
+          <p>Isi formulir di bawah untuk mendaftar</p>
+        </div>
+
+        <form id="registerForm" class="auth-form" novalidate>
+          <div class="form-group">
+            <label for="regName">Nama Lengkap</label>
+            <input type="text" id="regName" name="name" placeholder="Nama lengkap sesuai data sekolah" required />
+          </div>
+          <div class="form-row-2">
+            <div class="form-group">
+              <label for="regRole">Peran</label>
+              <select id="regRole" name="role" required>
+                <option value="">— Pilih peran —</option>
+                <option value="siswa">Siswa</option>
+                <option value="guru">Guru</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label for="regClass" id="regClassLabel">Kelas</label>
+              <input type="text" id="regClass" name="class" placeholder="Contoh: VIII-A" />
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="regEmail">Email Sekolah</label>
+            <input type="email" id="regEmail" name="email" placeholder="nama@smpn8depok.sch.id" required autocomplete="email" />
+          </div>
+          <div class="form-group">
+            <label for="regPassword">Kata Sandi</label>
+            <div class="password-wrap">
+              <input type="password" id="regPassword" name="password" placeholder="Minimal 8 karakter" required minlength="8" autocomplete="new-password" />
+              <button type="button" class="toggle-password" data-target="regPassword" aria-label="Tampilkan kata sandi">👁</button>
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="regConfirm">Konfirmasi Kata Sandi</label>
+            <input type="password" id="regConfirm" name="confirm" placeholder="Ulangi kata sandi" required minlength="8" autocomplete="new-password" />
+          </div>
+          <label class="checkbox-label">
+            <input type="checkbox" id="agreeTerms" required />
+            Saya setuju dengan <a href="#">Syarat & Ketentuan</a> perpustakaan sekolah
+          </label>
+          <button type="submit" class="btn btn-primary btn-block btn-lg">Daftar Sekarang</button>
+        </form>
+
+        <p class="auth-switch">
+          Sudah punya akun?
+          <a href="login.html">Masuk di sini</a>
+        </p>
+      </div>
+    </div>
+  </main>
+
+  <footer class="footer footer-minimal">
+    <div class="container footer-minimal-inner">
+      <p>© 2026 Aksara Library — Ruang Aksara SMPN 8 Depok</p>
+      <div class="footer-minimal-links">
+        <a href="index.html">Beranda</a>
+        <a href="login.html">Masuk</a>
+        <a href="index.html#contact">Kontak</a>
+      </div>
+    </div>
+  </footer>
+
+  <div class="toast" id="toast"></div>
+  <script src="data.js"></script>
+  <script src="auth.js"></script>
+</body>
+</html>
+
+

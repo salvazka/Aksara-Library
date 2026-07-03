@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Dashboard — Aksara Library</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body class="dashboard-page">
+  <header class="navbar navbar-dashboard" id="navbar">
+    <div class="nav-container">
+      <a href="dashboard.html" class="logo">
+        <img src="assets/logo.svg" alt="" class="logo-img" width="40" height="40" />
+        <span class="logo-wrap">
+          <span class="logo-text">Aksara Library</span>
+          <span class="logo-sub">Dashboard</span>
+        </span>
+      </a>
+      <button class="nav-toggle" id="navToggle" aria-label="Buka menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+      <nav class="nav-menu" id="navMenu">
+        <a href="#search">Cari Buku</a>
+        <a href="#catalog">Katalog</a>
+        <a href="#borrowing">Peminjaman</a>
+        <a href="#status">Status Baca</a>
+        <a href="#return">Pengembalian</a>
+        <a href="#announcements">Pengumuman</a>
+        <a href="#categories">Kategori</a>
+        <a href="#admin" class="nav-admin-only hidden">Panel Admin</a>
+      </nav>
+      <div class="nav-user" id="navUser">
+        <span class="nav-user-greet">Halo, <strong id="userName">—</strong></span>
+        <span class="nav-user-role" id="userRole">—</span>
+        <button class="btn btn-outline btn-sm" id="logoutBtn">Keluar</button>
+      </div>
+    </div>
+  </header>
+
+  <section class="dash-welcome" id="dashWelcome">
+    <div class="container">
+      <div class="dash-welcome-card clay-card">
+        <div>
+          <span class="section-tag">Selamat Datang</span>
+          <h1 id="welcomeTitle">Dashboard Perpustakaan</h1>
+          <p id="welcomeDesc">Kelola peminjaman, cari buku, dan lacak status baca Anda.</p>
+        </div>
+        <div class="dash-welcome-stats">
+          <div class="mini-stat"><strong>3</strong><span>Dipinjam</span></div>
+          <div class="mini-stat"><strong>12</strong><span>Selesai</span></div>
+          <div class="mini-stat"><strong>1</strong><span>Menunggu</span></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="search-section" id="search">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag">Pencarian</span>
+        <h2>Cari Buku</h2>
+        <p>Temukan buku berdasarkan judul, pengarang, kategori, ISBN, atau kata kunci</p>
+      </div>
+      <div class="search-box clay-card">
+        <div class="search-input-wrap">
+          <span class="search-icon">🔍</span>
+          <input type="text" id="searchInput" placeholder="Cari buku berdasarkan judul, pengarang, kategori, ISBN…" autocomplete="off" />
+          <button class="btn btn-primary" id="searchBtn">Cari</button>
+        </div>
+        <div class="filter-chips" id="filterChips">
+          <button class="chip active" data-filter="all">Semua</button>
+          <button class="chip" data-filter="Fiction">Fiction</button>
+          <button class="chip" data-filter="Non-Fiction">Non-Fiction</button>
+          <button class="chip" data-filter="Education">Education</button>
+          <button class="chip" data-filter="Science">Science</button>
+          <button class="chip" data-filter="Technology">Technology</button>
+          <button class="chip" data-filter="History">History</button>
+          <button class="chip" data-filter="Language">Language</button>
+          <button class="chip" data-filter="Religion">Religion</button>
+          <button class="chip" data-filter="Children Books">Children Books</button>
+          <button class="chip" data-filter="Academic Books">Academic Books</button>
+          <button class="chip" data-filter="School References">School References</button>
+        </div>
+      </div>
+      <p class="search-result-count" id="searchResultCount"></p>
+    </div>
+  </section>
+
+  <section class="catalog-section" id="catalog">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag">Katalog</span>
+        <h2>Koleksi Perpustakaan</h2>
+      </div>
+      <div class="book-grid" id="bookGrid"></div>
+    </div>
+  </section>
+
+  <section class="flow-section" id="borrowing">
+    <div class="container">
+      <div class="section-header center">
+        <span class="section-tag">Alur Peminjaman</span>
+        <h2>Perjalanan Peminjaman Buku</h2>
+      </div>
+      <div class="flow-track">
+        <div class="flow-step clay-card"><div class="flow-icon">🔐</div><h4>Masuk</h4><p>Login ke sistem</p></div>
+        <div class="flow-arrow">→</div>
+        <div class="flow-step clay-card"><div class="flow-icon">🔍</div><h4>Cari Buku</h4><p>Telusuri katalog</p></div>
+        <div class="flow-arrow">→</div>
+        <div class="flow-step clay-card"><div class="flow-icon">📖</div><h4>Detail Buku</h4><p>Lihat informasi</p></div>
+        <div class="flow-arrow">→</div>
+        <div class="flow-step clay-card"><div class="flow-icon">✅</div><h4>Cek Stok</h4><p>Pastikan tersedia</p></div>
+        <div class="flow-arrow">→</div>
+        <div class="flow-step clay-card"><div class="flow-icon">📝</div><h4>Ajukan Pinjam</h4><p>Kirim permintaan</p></div>
+        <div class="flow-arrow">→</div>
+        <div class="flow-step clay-card highlight"><div class="flow-icon">👨‍💼</div><h4>Validasi Admin</h4><p>Ditinjau pustakawan</p></div>
+        <div class="flow-arrow">→</div>
+        <div class="flow-step clay-card"><div class="flow-icon">📚</div><h4>Pinjam & Baca</h4><p>Ambil buku</p></div>
+        <div class="flow-arrow">→</div>
+        <div class="flow-step clay-card"><div class="flow-icon">↩️</div><h4>Kembalikan</h4><p>Ajukan pengembalian</p></div>
+        <div class="flow-arrow">→</div>
+        <div class="flow-step clay-card success"><div class="flow-icon">🎉</div><h4>Selesai</h4><p>Status diperbarui</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="status-section" id="status">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag">Status Peminjaman</span>
+        <h2>Lacak Peminjaman & Progres Baca</h2>
+      </div>
+      <div class="status-demo">
+        <div class="status-tabs">
+          <button class="status-tab active" data-tab="borrowed">Sedang Dipinjam</button>
+          <button class="status-tab" data-tab="history">Riwayat</button>
+          <button class="status-tab" data-tab="return">Pengembalian</button>
+        </div>
+        <div class="status-content" id="statusContent"></div>
+      </div>
+      <div class="status-legend">
+        <span class="badge badge-waiting">Menunggu Validasi</span>
+        <span class="badge badge-approved">Disetujui</span>
+        <span class="badge badge-rejected">Ditolak</span>
+        <span class="badge badge-borrowed">Dipinjam</span>
+        <span class="badge badge-returned">Dikembalikan</span>
+        <span class="badge badge-overdue">Terlambat</span>
+        <span class="badge badge-due">Segera Jatuh Tempo</span>
+      </div>
+    </div>
+  </section>
+
+  <section class="return-section" id="return">
+    <div class="container">
+      <div class="return-grid">
+        <div class="return-info clay-card">
+          <span class="section-tag">Pengembalian</span>
+          <h2>Ajukan Pengembalian Buku</h2>
+          <p>Admin akan mengonfirmasi, mengecek keterlambatan, dan menghitung denda jika ada.</p>
+          <ul class="return-steps">
+            <li>Ajukan pengembalian melalui sistem</li>
+            <li>Admin konfirmasi pengembalian</li>
+            <li>Sistem cek keterlambatan otomatis</li>
+            <li>Denda dihitung jika terlambat</li>
+          </ul>
+          <button class="btn btn-primary" id="returnBtn">Ajukan Pengembalian</button>
+        </div>
+        <div class="return-demo clay-card">
+          <h3>Contoh Perhitungan Denda</h3>
+          <div class="fine-calc">
+            <div class="fine-row"><span>Jatuh Tempo</span><strong>20 Jun 2026</strong></div>
+            <div class="fine-row"><span>Tanggal Kembali</span><strong>25 Jun 2026</strong></div>
+            <div class="fine-row"><span>Keterlambatan</span><strong class="text-coral">5 hari</strong></div>
+            <div class="fine-row total"><span>Denda (@ Rp 2.000/hari)</span><strong class="text-coral">Rp 10.000</strong></div>
+          </div>
+          <div class="return-confirm">
+            <span class="badge badge-returned">Dikembalikan</span>
+            <p>Pengembalian dikonfirmasi Admin</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="features-section" id="features">
+    <div class="container">
+      <div class="section-header center">
+        <span class="section-tag">Fitur</span>
+        <h2>Fitur Unggulan Platform</h2>
+      </div>
+      <div class="features-grid">
+        <div class="feature-card clay-card fc-blue"><span>📚</span><h4>Katalog Online</h4></div>
+        <div class="feature-card clay-card fc-purple"><span>🔍</span><h4>Pencarian Buku</h4></div>
+        <div class="feature-card clay-card fc-mint"><span>📖</span><h4>Detail Buku</h4></div>
+        <div class="feature-card clay-card fc-yellow"><span>✅</span><h4>Cek Ketersediaan</h4></div>
+        <div class="feature-card clay-card fc-coral"><span>📝</span><h4>Pengajuan Pinjam</h4></div>
+        <div class="feature-card clay-card fc-blue"><span>🔔</span><h4>Notifikasi</h4></div>
+        <div class="feature-card clay-card fc-purple"><span>↩️</span><h4>Pengembalian</h4></div>
+        <div class="feature-card clay-card fc-mint"><span>📊</span><h4>Laporan</h4></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="categories-section" id="categories">
+    <div class="container">
+      <div class="section-header center">
+        <span class="section-tag">Kategori</span>
+        <h2>Jelajahi Kategori Buku</h2>
+      </div>
+      <div class="categories-grid" id="categoriesGrid"></div>
+    </div>
+  </section>
+
+  <section class="announcements-section" id="announcements">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag">Pengumuman</span>
+        <h2>Informasi Perpustakaan</h2>
+      </div>
+      <div class="announcements-grid" id="announcementsGrid"></div>
+    </div>
+  </section>
+
+  <section class="admin-section hidden" id="admin">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag">Panel Admin</span>
+        <h2>Dashboard Pustakawan</h2>
+        <p>Kelola data buku, anggota, validasi peminjaman, dan laporan</p>
+      </div>
+      <div class="admin-layout">
+        <div class="admin-stats">
+          <div class="admin-stat clay-card"><span class="stat-icon">📚</span><div><strong>2.450</strong><span>Total Buku</span></div></div>
+          <div class="admin-stat clay-card"><span class="stat-icon">👥</span><div><strong>890</strong><span>Anggota</span></div></div>
+          <div class="admin-stat clay-card"><span class="stat-icon">📋</span><div><strong>24</strong><span>Menunggu Validasi</span></div></div>
+          <div class="admin-stat clay-card warning"><span class="stat-icon">⚠️</span><div><strong>7</strong><span>Terlambat</span></div></div>
+        </div>
+        <div class="admin-chart clay-card">
+          <h3>Aktivitas Peminjaman</h3>
+          <div class="chart-bars">
+            <div class="chart-col"><div class="chart-bar" style="height:55%"></div><span>Sen</span></div>
+            <div class="chart-col"><div class="chart-bar" style="height:70%"></div><span>Sel</span></div>
+            <div class="chart-col"><div class="chart-bar" style="height:45%"></div><span>Rab</span></div>
+            <div class="chart-col"><div class="chart-bar" style="height:85%"></div><span>Kam</span></div>
+            <div class="chart-col"><div class="chart-bar" style="height:60%"></div><span>Jum</span></div>
+            <div class="chart-col"><div class="chart-bar" style="height:30%"></div><span>Sab</span></div>
+          </div>
+        </div>
+        <div class="admin-notifications clay-card">
+          <h3>Notifikasi Terbaru</h3>
+          <div class="notif-item"><span class="notif-dot orange"></span> 5 pengajuan peminjaman baru</div>
+          <div class="notif-item"><span class="notif-dot red"></span> 3 buku terlambat</div>
+          <div class="notif-item"><span class="notif-dot green"></span> 12 buku baru ditambahkan</div>
+        </div>
+      </div>
+      <div class="admin-features">
+        <div class="admin-feature clay-card"><span>📚</span><h4>Kelola Data Buku</h4></div>
+        <div class="admin-feature clay-card"><span>👥</span><h4>Kelola Anggota</h4></div>
+        <div class="admin-feature clay-card"><span>✅</span><h4>Validasi Peminjaman</h4></div>
+        <div class="admin-feature clay-card"><span>↩️</span><h4>Konfirmasi Pengembalian</h4></div>
+        <div class="admin-feature clay-card"><span>⏰</span><h4>Cek Keterlambatan</h4></div>
+        <div class="admin-feature clay-card"><span>🔑</span><h4>Hak Akses</h4></div>
+        <div class="admin-feature clay-card"><span>🔄</span><h4>Update Status</h4></div>
+        <div class="admin-feature clay-card"><span>📊</span><h4>Laporan</h4></div>
+        <div class="admin-feature clay-card"><span>📈</span><h4>Dashboard Info</h4></div>
+      </div>
+    </div>
+  </section>
+
+  <footer class="footer footer-minimal">
+    <div class="container footer-minimal-inner">
+      <p>© 2026 Aksara Library — Dashboard</p>
+      <div class="footer-minimal-links">
+        <a href="index.html">Beranda Publik</a>
+        <button class="link-btn" id="footerLogout">Keluar</button>
+      </div>
+    </div>
+  </footer>
+
+  <div class="toast" id="toast"></div>
+  <script src="data.js"></script>
+  <script src="dashboard.js"></script>
+</body>
+</html>

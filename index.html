@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Aksara Library — Ruang Aksara SMPN 8 Depok</title>
+  <meta name="description" content="Platform perpustakaan digital sekolah yang ceria dan edukatif untuk SMPN 8 Depok." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body class="landing-page">
+  <header class="navbar navbar-public" id="navbar">
+    <div class="nav-container">
+      <a href="#home" class="logo">
+        <img src="assets/logo.svg" alt="" class="logo-img" width="40" height="40" />
+        <span class="logo-wrap">
+          <span class="logo-text">Aksara Library</span>
+          <span class="logo-sub">Ruang Aksara · SMPN 8 Depok</span>
+        </span>
+      </a>
+      <button class="nav-toggle" id="navToggle" aria-label="Buka menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+      <nav class="nav-menu nav-menu-simple" id="navMenu">
+        <a href="#home">Beranda</a>
+        <a href="#about">Tentang</a>
+        <a href="#contact">Kontak</a>
+        <div class="nav-mobile-auth">
+          <a href="login.html" class="btn btn-outline btn-block">Masuk</a>
+          <a href="register.html" class="btn btn-primary btn-block">Daftar</a>
+        </div>
+      </nav>
+      <div class="nav-actions">
+        <a href="login.html" class="btn btn-outline">Masuk</a>
+        <a href="register.html" class="btn btn-primary">Daftar</a>
+      </div>
+    </div>
+  </header>
+
+  <!-- Hero -->
+  <section class="hero hero-landing" id="home">
+    <div class="hero-bg-shapes">
+      <div class="shape shape-1"></div>
+      <div class="shape shape-2"></div>
+      <div class="shape shape-3"></div>
+    </div>
+    <div class="container hero-grid">
+      <div class="hero-content">
+        <span class="hero-badge">Platform Edukasi Digital · SMPN 8 Depok</span>
+        <h1>Belajar & Baca Lebih Seru dengan <span class="gradient-text">Aksara Library</span></h1>
+        <p class="hero-sub">Platform perpustakaan digital yang ceria dan edukatif — jelajahi katalog buku, lacak progres baca, dan kelola peminjaman dengan mudah.</p>
+        <div class="hero-cta">
+          <a href="register.html" class="btn btn-primary btn-lg">Gabung Sekarang</a>
+          <a href="login.html" class="btn btn-secondary btn-lg">Masuk Akun</a>
+        </div>
+        <div class="hero-stats">
+          <div class="stat-clay"><strong>2.450+</strong><span>Koleksi Buku</span></div>
+          <div class="stat-clay"><strong>890+</strong><span>Anggota Aktif</span></div>
+          <div class="stat-clay"><strong>98%</strong><span>Kepuasan</span></div>
+        </div>
+      </div>
+
+      <!-- Logo Hero -->
+      <div class="hero-logo-section">
+        <div class="hero-logo-card clay-card">
+          <img src="assets/logo.svg" alt="Logo Aksara Library" class="hero-logo-img" width="200" height="200" />
+          <div class="hero-logo-text">
+            <span class="hero-logo-name">Aksara Library</span>
+            <span class="hero-logo-sub">Ruang Aksara · SMPN 8 Depok</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Catalog Preview -->
+  <section class="preview-section" id="catalog-preview">
+    <div class="container">
+      <div class="section-header center">
+        <span class="section-tag">Pratinjau Katalog</span>
+        <h2>Koleksi Buku Populer</h2>
+        <p>Lihat sekilas buku-buku favorit di perpustakaan sekolah. Daftar untuk meminjam dan mengakses katalog lengkap.</p>
+      </div>
+      <div class="preview-grid" id="previewGrid"></div>
+      <div class="preview-lock clay-card">
+        <span class="lock-icon">🔒</span>
+        <p>Masuk atau daftar untuk meminjam buku dan mengakses katalog lengkap</p>
+        <a href="login.html" class="btn btn-primary">Masuk untuk Meminjam</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Progress Demo -->
+  <section class="preview-section preview-section-alt" id="progress-preview">
+    <div class="container">
+      <div class="section-header center">
+        <span class="section-tag">Lacak Progres</span>
+        <h2>Pantau Progres Membaca</h2>
+        <p>Setelah masuk, lacak buku yang sedang dibaca, jatuh tempo, dan riwayat peminjaman secara real-time.</p>
+      </div>
+      <div class="progress-demo-grid" id="progressDemo"></div>
+    </div>
+  </section>
+
+  <!-- Testimonials -->
+  <section class="testimonials-section" id="testimonials">
+    <div class="container">
+      <div class="section-header center">
+        <span class="section-tag">Testimoni</span>
+        <h2>Apa Kata Siswa & Guru?</h2>
+      </div>
+      <div class="testimonials-grid" id="testimonialsGrid"></div>
+    </div>
+  </section>
+
+  <!-- Enrollment CTA -->
+  <section class="membership-section" id="enroll">
+    <div class="container">
+      <div class="membership-card clay-card">
+        <div class="membership-content">
+          <h2>Mulai Perjalanan Bacamu Hari Ini</h2>
+          <p class="membership-lead">Daftar gratis sebagai anggota perpustakaan digital SMPN 8 Depok.</p>
+          <ul class="benefits-list">
+            <li>Akses ribuan buku sekolah</li>
+            <li>Peminjaman & pengembalian online</li>
+            <li>Pengingat jatuh tempo otomatis</li>
+            <li>Riwayat baca & rekomendasi buku</li>
+          </ul>
+          <a href="register.html" class="btn btn-primary btn-lg">Daftar Sebagai Anggota</a>
+        </div>
+        <div class="membership-visual">
+          <div class="enroll-icons">📚 📖 🎓 ✨</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- About -->
+  <section class="about-section" id="about">
+    <div class="container">
+      <div class="about-grid">
+        <div class="about-content">
+          <span class="section-tag">Tentang Kami</span>
+          <h2>Ruang Aksara — Perpustakaan Digital SMPN 8 Depok</h2>
+          <p>Aksara Library adalah sistem informasi perpustakaan digital yang dirancang untuk siswa, guru, pustakawan, dan admin sekolah.</p>
+          <p>Setelah masuk, Anda dapat mencari buku, mengajukan peminjaman, melacak status, menerima notifikasi keterlambatan, dan mengelola pengembalian — semua sesuai alur sistem perpustakaan sekolah.</p>
+          <div class="about-roles">
+            <span class="role-chip">👩‍🎓 Siswa</span>
+            <span class="role-chip">👨‍🏫 Guru</span>
+            <span class="role-chip">📚 Pustakawan</span>
+            <span class="role-chip">🛠️ Admin</span>
+          </div>
+        </div>
+        <div class="about-visual clay-card">
+          <div class="about-feature-list">
+            <div class="about-feat"><span>🔍</span><div><strong>Cari & Pinjam Buku</strong><p>Katalog lengkap dengan filter kategori</p></div></div>
+            <div class="about-feat"><span>📋</span><div><strong>Lacak Status</strong><p>Pantau peminjaman & pengembalian</p></div></div>
+            <div class="about-feat"><span>🛠️</span><div><strong>Panel Admin</strong><p>Validasi, laporan, & kelola data</p></div></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact -->
+  <section class="contact-section" id="contact">
+    <div class="container">
+      <div class="section-header center">
+        <span class="section-tag">Kontak</span>
+        <h2>Hubungi Perpustakaan Sekolah</h2>
+      </div>
+      <div class="contact-grid">
+        <div class="contact-card clay-card">
+          <span>📍</span>
+          <h4>Alamat</h4>
+          <p>Jl. Margonda Raya No. 1<br />Depok, Jawa Barat 16424</p>
+        </div>
+        <div class="contact-card clay-card">
+          <span>📧</span>
+          <h4>Email</h4>
+          <p>perpustakaan@smpn8depok.sch.id</p>
+        </div>
+        <div class="contact-card clay-card">
+          <span>📱</span>
+          <h4>Telepon</h4>
+          <p>(021) 7782-3456</p>
+        </div>
+        <div class="contact-card clay-card">
+          <span>🕐</span>
+          <h4>Jam Operasional</h4>
+          <p>Sen–Jum: 07.00–15.00 WIB</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer class="footer footer-public">
+    <div class="container footer-public-inner">
+      <a href="#home" class="logo footer-logo">
+        <img src="assets/logo.svg" alt="" class="logo-img" width="36" height="36" />
+        <span class="logo-wrap">
+          <span class="logo-text">Aksara Library</span>
+          <span class="logo-sub logo-sub-light">Ruang Aksara · SMPN 8 Depok</span>
+        </span>
+      </a>
+      <nav class="footer-public-nav">
+        <a href="#home">Beranda</a>
+        <a href="#about">Tentang</a>
+        <a href="#contact">Kontak</a>
+        <a href="login.html">Masuk</a>
+        <a href="register.html">Daftar</a>
+      </nav>
+      <p class="footer-copy">© 2026 Aksara Library — SMPN 8 Depok</p>
+    </div>
+  </footer>
+
+  <div class="toast" id="toast"></div>
+  <script src="data.js"></script>
+  <script src="landing.js"></script>
+</body>
+</html>
